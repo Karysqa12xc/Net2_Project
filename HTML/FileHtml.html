@@ -11,167 +11,113 @@
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="icon" type="image/x-icon" href="imgs/Ông Tố Hữu.jpg">
     <style>
-        /*Css bằng cách internal*/
-        body {
-            background-color: powderblue;
-        }
-
-        h1 {
-            color: blue;
-        }
+        * {
+            box-sizing: border-box;
+          }
+          
+          body {
+            font-family: monospace;
+          }
+          header {
+            background-color: pink;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+          }
+          
+          
+          nav {
+            float: left;
+            width: 30%;
+            height: 300px; 
+            background: #ccc;
+            padding: 20px;
+          }
+          
+          
+          nav ul {
+            list-style-type: none;
+            padding: 0;
+          }
+          
+          article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+            height: 300px; /* only for demonstration, should be removed */
+          }
+          
+          /* Clear floats after the columns */
+          section::after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+          
+          /* Style the footer */
+          footer {
+            background-color: green;
+            padding: 10px;
+            text-align: center;
+            color: white;
+          }
     </style>
 </head>
 
 <body style="background-color: powderblue;">
-    <h1>Nguyễn Viết Hoàng Nam - 2021050461</h1>
+    <h2>CSS với Float Layout</h2>
     <p>Nguyễn Viết Hoàng Nam - 2021050461</p>
-    <img src="imgs/requestIMG.png" alt="HTML Attributes">
-    <h1>Nguyễn Viết Hoàng Nam - 2021050461</h1>
-    <h2>Nguyễn Viết Hoàng Nam - 2021050461</h2>
-    <h3>Nguyễn Viết Hoàng Nam - 2021050461</h3>
-    <h4>Nguyễn Viết Hoàng Nam - 2021050461</h4>
-    <h5>Nguyễn Viết Hoàng Nam - 2021050461</h5>
-    <h6>Nguyễn Viết Hoàng Nam - 2021050461</h6>
 
-    <p>
-        This paragraph
-        contains a lot of lines
-        in the source code,
-        but the browser
-        ignores it.
-    </p>
+    <header>
+        <h2>Test layout float</h2>
+    </header>
 
-    <p>
-        This paragraph
-        contains a lot of spaces
-        in the source code,
-        but the browser
-        ignores it.
-    </p>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Linkedin</a></li>
+                <li><a href="#">Github</a></li>
+            </ul>
+        </nav>
+        <article>
+            <h1>Nội dung</h1>
+            <p>Phần trên cùng được gọi là header của trang web.</p>
+            <p>Phần bên trái được gọi là aside, nơi để các link liên kết tới các trang trong website</p>
+            <p>Phần ở dưới cùng gọi là footer nơi này thường để những thông tin như email, nhà phát hành trang web, thông tin liên hệ</p>
+            <p>Phần article để hiện thị nội dung</p>
+        </article>
+    </section>
+    <footer>Thông tin liên hệ: xxxxxx.com.vn</footer>
+    <br><br><br><br><br>
 
-    <h1 style="background-color:powderblue;">Nguyễn Viết Hoàng Nam - 2021050461</h1>
-    <p style="background-color:tomato;">Nguyễn Viết Hoàng Nam - 2021050461</p>
+    <h2>CSS với Flex Layout</h2>
+    <p>Nguyễn Viết Hoàng Nam - 2021050461</p>
 
-    <b>Chữ in đậm</b><br>
-    <strong>Strong text</strong><br>
-    <i>Chữ in nghiêng</i><br>
-    <em>This text is emphasized</em><br>
-    <small>This is some smaller text.</small><br>
-    <p>My favorite color is <del>blue</del> red.</p>
-    <p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
-    <p>H<sub>2</sub>O</p>
-    <p>X<sup>2</sup>+ X = 0</p>
+    <header id="headerflex">
+        <h2>Test layout flex</h2>
+    </header>
 
-    <p>Vì sao biển Sa Huỳnh ngập rác?</p>
-    <blockquote cite="https://vnexpress.net/vi-sao-bien-sa-huynh-ngap-rac-4643336.html">
-        Nhà máy rác bị cho xây dựng sai khoảng cách, dừng hoạt động suốt 5 năm, người dân vứt chất thải ra biển Sa
-        Huỳnh, thị xã Đức Phổ, gây ô nhiễm kéo dài.
-    </blockquote>
-    <p>Mục tiêu: <q>Học về HTML Quotation and Citation Elements</q></p>
-    <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
-    <address>
-        Written by Nguyễn Viết Hoàng Nam.<br>
-        Visit me at: https://github.com/Karysqa12xc/Net2_Project<br>
-        github.com<br>
-        Hà Nội<br>
-        Việt Nam
-    </address>
-    <p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
-    <bdo dir="rtl">Chữ này đảo</bdo>
-    <!-- Học về comment -->
-    <p>This <!-- great text --> is a paragraph.</p>
-
-    <h1 style="background-color:DodgerBlue;">Đổi màu nền của thẻ h1</h1>
-    <p style="background-color:Tomato;">Đổi màu nền của thẻ p</p>
-
-    <h1 style="color:Tomato;">Đổi màu chữ của thẻ h1</h1>
-    <p style="color:DodgerBlue;">Đổi màu chữ của thẻ p</p>
-
-    <h1 style="border:2px solid Tomato;">Đổi màu viền</h1>
-
-    <h1 style="color:blue;">CSS bằng cách inline</h1>
-    <h1>CSS bằng internal</h1>
-    <h3>CSS bằng external</h3>
-
-    <a href="https://www.facebook.com/" title="Truy cập facebook">Link truy cập facebook</a><br>
-    <img src="imgs/Ông Tố Hữu.jpg" alt="HTML IMAGES">
-
-
-    <table>
-        <caption>HTML TABLE</caption>
-        <tr>
-            <th>Emil</th>
-            <th>Tobias</th>
-            <th>Linus</th>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>14</td>
-            <td>10</td>
-        </tr>
-    </table>
-    <!-- Hiện số -->
-    <ol type="I">
-        <li>Trà</li>
-        <li>Đường</li>
-        <li>Sữa</li>
-    </ol>
-    <!-- Hiện chấm -->
-    <ul>
-        <li>Trà</li>
-        <li>Đường</li>
-        <li>Sữa</li>
-    </ul>
-    <dl>
-        <dt>Coffee</dt>
-        <dd>- black hot drink</dd>
-        <dt>Milk</dt>
-        <dd>- white cold drink</dd>
-    </dl>
-
-    <div>Thẻ div là một block-element 1</div>viết ngoài thẻ div
-    và dòng này bị xuống dòng
-    <div></div>
-    <span>Thẻ span là một inline-element 2|</span> viết ngoài thẻ span
-    nhưng thẻ không xuống dòng
-
-    <div class="city">
-        <h2>Việt Nam</h2>
-        <p>Hà Nội có tháp rùa.</p>
-    </div>
-
-    <div class="city">
-        <h2>Việt Nam</h2>
-        <p>Thành phố Hồ Chí Minh có dinh độc lập</p>
-    </div>
-
-
-    <!-- An element with a unique id -->
-    <h1 id="myHeader">My Cities</h1>
-
-    <!-- Multiple elements with same class -->
-    <h2 class="city">London</h2>
-    <p>London is the capital of England.</p>
-
-    <h2 class="city">Paris</h2>
-    <p>Paris is the capital of France.</p>
-
-    <h2 class="city">Tokyo</h2>
-    <p>Tokyo is the capital of Japan.</p>
-
-    <iframe src="FileHtml.html" height="200" width="300" title="Iframe Example"></iframe>
-
-    <h4 id="demoJavaScript"></h4>
-    <button onclick="changeText()">Click</button>
-    <div></div>
-    <img height="200px" width="300px" src="imgs/Karysqa_pixel_avartar_boy_mokican_415b18ff-4343-4f0e-9cf7-a7cc8dff6aed.png" alt="HTML FILE PATH">
+    <section id="sectionflex">
+        <nav id="navflex">
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Linkedin</a></li>
+                <li><a href="#">Github</a></li>
+            </ul>
+        </nav>
+        <article id="articleflex">
+            <h1>Nội dung</h1>
+            <p>Phần trên cùng được gọi là header của trang web.</p>
+            <p>Phần bên trái được gọi là aside, nơi để các link liên kết tới các trang trong website</p>
+            <p>Phần ở dưới cùng gọi là footer nơi này thường để những thông tin như email, nhà phát hành trang web, thông tin liên hệ</p>
+            <p>Phần article để hiện thị nội dung</p>
+        </article>
+    </section>
+    <footer id="footerflex">Thông tin liên hệ: xxxxxx.com.vn</footer>
 </body>
 
-<script>
-    function changeText() {
-        document.getElementById("demoJavaScript").innerHTML = "Hello JavaScript"
-    }
-
-</script>
 
 </html>
