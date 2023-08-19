@@ -1,3 +1,17 @@
-h3{
+h3 {
     color: green;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-radius: 10px;
+    text-align: center;
+}
+
+th,
+td {
+    background-color: pink;
 }
