@@ -19,54 +19,21 @@
 </head>
 
 <body>
-  <h2>Form Element</h2>
+  <h2>Form Attributes</h2>
   <p>Nguyễn Viết Hoàng Nam - 2021050461</p>
-  <!-- Type ghi chữ -->
-  <input type="text"> Type ghi chữ <br>
-  <!-- Type chọn màu sắc -->
-  <input type="color">Type chọn màu sắc <br>
-  <!-- Type tạo nút nhấn -->
-  <input type="button">Type tạo nút nhấn <br>
-  <!-- Type tạo calenda -->
-  <input type="date">Type tạo calenda<br>
-  <!-- Type điền ngày, tháng, năm kèm theo thơi gian -->
-  <input type="datetime"> Type điền ngày, tháng, năm kèm theo thời gian<br>
-  <!-- Type tạo calenda có kèm thời gian -->
-  <input type="datetime-local">Type tạo calenda có kèm thời gian <br>
-  <!-- Type điền text theo chuẩn email -->
-  <input type="email">Type điền text theo chuẩn email <br>
-  <!-- Type chọn file từ máy tính lên web -->
-  <input type="file"> Type chọn file từ máy tính lên web <br>
-  <!-- Type được ẩn -->
-  <input type="hidden">Type được ẩn<br>
-  <!-- Type hiển thị ảnh -->
-  <input type="image"> Type hiển thị ảnh <br>
-  <!-- Type tạo calenda chỉ chọn tháng -->
-  <input type="month">Type tạo calenda chỉ chọn tháng<br>
-  <!-- Type chỉ cho nhập số -->
-  <input type="number"> Type chỉ cho nhập số<br>
-  <!-- Type khiển cho kí tự nhập từ bàn phím được ẩn đi -->
-  <input type="password">Type khiển cho kí tự nhập từ bàn phím được ẩn đi<br>
-  <!-- Type tạo ô chọn hình tròn -->
-  <input type="radio">Type tạo ô chọn hình tròn <br>
-  <!-- Type tạo ô chọn hình vuông -->
-  <input type="checkbox">Type tạo ô chọn hình vuông<br>
-  <!-- Type tạo thanh kéo thả tăng giảm -->
-  <input type="range">Type tạo thanh kéo thả tăng giảm<br>
-  <!-- Type tạo nút nhấn thiết lập lại mọi thứ về default -->
-  <input type="reset">Type tạo nút nhấn thiết lập lại mọi thứ về default<br>
-  <!-- Type tạo thanh tìm kiếm -->
-  <input type="search">Type tạo thanh tìm kiếm<br>
-  <!-- Type tạo nút gửi dữ liệu của trang web về đâu đó -->
-  <input type="submit">Type tạo nút gửi dữ liệu của trang web về đâu đó<br>
-  <!-- Type dùng cho kiểu nhập chuẩn số điện thoại -->
-  <input type="tel">Type dùng cho kiểu nhập chuẩn số điện thoại<br>
-  <!-- Type cho phép điền thời gian -->
-  <input type="time">Type cho phép điền thời gian<br>
-  <!-- Type cho phép dán một đường link khác vào -->
-  <input type="url">Type cho phép dán một đường link khác vào<br>
-  <!-- Tạo một calenda hiển thị theo các tuần -->
-  <input type="week">Tạo một calenda hiển thị theo các tuần<br>
+  <form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe">
+</form>
+
+<form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John" readonly><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe">
+</form>
 
 </body>
 
