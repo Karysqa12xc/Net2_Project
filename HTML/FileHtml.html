@@ -19,14 +19,32 @@
 </head>
 
 <body>
-  <h2>XHTML</h2>
+  <h2>Form Element</h2>
   <p>Nguyễn Viết Hoàng Nam - 2021050461</p>
+
   <form action="/action_page.php">
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname">
+    <fieldset>
+      <legend>Personalia:</legend>
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname" value="John"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname" value="Doe"><br><br>
+      <input type="submit" value="Submit">
+    </fieldset>
   </form>
+  <form action="/action_page.php">
+    <input list="browsers">
+    <datalist id="browsers">
+      <option value="Internet Explorer">
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+    </datalist>
+  </form>
+  <textarea name="message" style="width:200px; height:600px;">
+    The cat was playing in the garden.
+    </textarea>
 </body>
 
 
