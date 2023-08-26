@@ -1,0 +1,12 @@
+h1{
+    box-sizing: unset;
+    margin: 0px;
+}
+table, th, td{
+    border: 1px solid black;    
+    background-color: rgb(139, 235, 139);
+}
+img{
+    width: 500px;
+    height: 500px;
+}
