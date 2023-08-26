@@ -19,40 +19,26 @@
 </head>
 
 <body>
-  <h2>Form Attributes</h2>
+  <h2>Canvas</h2>
   <p>Nguyễn Viết Hoàng Nam - 2021050461</p>
-  <form action="/action_page.php" id="form1">
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname"><br><br>
-    <input type="submit" value="Submit">
-</form>
+  <p>Image to use:</p>
+<img id="scream" src="https://www.edvardmunch.org/images/paintings/the-scream.jpg" alt="The Scream" width="220" height="277">
 
-<label for="lname">Last name:</label>
-<input type="text" id="lname" name="lname" form="form1">
+<p>Canvas to fill:</p>
+<canvas id="myCanvas" width="250" height="300"
+style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.</canvas>
 
-<form action="/action_page.php">
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname"><br><br>
-    <label for="lname">Last name:</label>
-    <input type="text" id="lname" name="lname"><br><br>
-    <input type="submit" value="Submit">
-    <input type="submit" formaction="/action_page2.php" value="Submit as Admin">
-</form>
-<form action="/action_page_binary.asp" method="post">
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname"><br><br>
-    <input type="submit" value="Submit">
-    <input type="submit" formenctype="multipart/form-data" value="Submit as Multipart/form-data">
-</form>
+<p><button onclick="myCanvas()">Try it</button></p>
 
-<form action="/action_page.php" method="get">
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname"><br><br>
-    <label for="lname">Last name:</label>
-    <input type="text" id="lname" name="lname"><br><br>
-    <input type="submit" value="Submit using GET">
-    <input type="submit" formmethod="post" value="Submit using POST">
-</form>
+<script>
+function myCanvas() {
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("scream");
+  ctx.drawImage(img,10,10);
+}
+</script>
 
 </body>
 
