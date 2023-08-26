@@ -2,121 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free Web tutorials">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Nguyễn Viết Hoàng Nam">
-    <title>HTML PAGE TITLE</title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="icon" type="image/x-icon" href="imgs/Ông Tố Hữu.jpg">
-    <style>
-        * {
-            box-sizing: border-box;
-          }
-          
-          body {
-            font-family: monospace;
-          }
-          header {
-            background-color: pink;
-            padding: 30px;
-            text-align: center;
-            font-size: 35px;
-            color: white;
-          }
-          
-          
-          nav {
-            float: left;
-            width: 30%;
-            height: 300px; 
-            background: #ccc;
-            padding: 20px;
-          }
-          
-          
-          nav ul {
-            list-style-type: none;
-            padding: 0;
-          }
-          
-          article {
-            float: left;
-            padding: 20px;
-            width: 70%;
-            background-color: #f1f1f1;
-            height: 300px; /* only for demonstration, should be removed */
-          }
-          
-          /* Clear floats after the columns */
-          section::after {
-            content: "";
-            display: table;
-            clear: both;
-          }
-          
-          /* Style the footer */
-          footer {
-            background-color: green;
-            padding: 10px;
-            text-align: center;
-            color: white;
-          }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="Nguyễn Viết Hoàng Nam">
+  <title>HTML PAGE TITLE</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="icon" type="image/x-icon" href="imgs/Ông Tố Hữu.jpg">
+  <style>
+    .left,
+    .right {
+      float: left;
+      color: white;
+      width: 20%;
+      height: 100px;
+      /* The width is 20%, by default */
+    }
+    .left{
+      background-color: pink;
+    }
+    .right{
+      background-color: green;
+      
+    }
+
+    .main {
+      float: left;
+      width: 60%;
+      height: 100px;
+      background-color: #ccc;
+      color: white;
+      /* The width is 60%, by default */
+    }
+
+    /* Use a media query to add a breakpoint at 800px: */
+    @media screen and (max-width: 800px) {
+
+      .left,
+      .main,
+      .right {
+        width: 100%;
+        /* The width is 100%, when the viewport is 800px or smaller */
+      }
+    }
+  </style>
 </head>
 
-<body style="background-color: powderblue;">
-    <h2>CSS với Float Layout</h2>
-    <p>Nguyễn Viết Hoàng Nam - 2021050461</p>
+<body>
+  <h2>Responsive</h2>
+  <p>Nguyễn Viết Hoàng Nam - 2021050461</p>
+  <div class="left">Left Menu</div>
+  <div class="main">Main Content</div>
+  <div class="right">Right Content</div>
 
-    <header>
-        <h2>Test layout float</h2>
-    </header>
-
-    <section>
-        <nav>
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Linkedin</a></li>
-                <li><a href="#">Github</a></li>
-            </ul>
-        </nav>
-        <article>
-            <h1>Nội dung</h1>
-            <p>Phần trên cùng được gọi là header của trang web.</p>
-            <p>Phần bên trái được gọi là aside, nơi để các link liên kết tới các trang trong website</p>
-            <p>Phần ở dưới cùng gọi là footer nơi này thường để những thông tin như email, nhà phát hành trang web, thông tin liên hệ</p>
-            <p>Phần article để hiện thị nội dung</p>
-        </article>
-    </section>
-    <footer>Thông tin liên hệ: xxxxxx.com.vn</footer>
-    <br><br><br><br><br>
-
-    <h2>CSS với Flex Layout</h2>
-    <p>Nguyễn Viết Hoàng Nam - 2021050461</p>
-
-    <header id="headerflex">
-        <h2>Test layout flex</h2>
-    </header>
-
-    <section id="sectionflex">
-        <nav id="navflex">
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Linkedin</a></li>
-                <li><a href="#">Github</a></li>
-            </ul>
-        </nav>
-        <article id="articleflex">
-            <h1>Nội dung</h1>
-            <p>Phần trên cùng được gọi là header của trang web.</p>
-            <p>Phần bên trái được gọi là aside, nơi để các link liên kết tới các trang trong website</p>
-            <p>Phần ở dưới cùng gọi là footer nơi này thường để những thông tin như email, nhà phát hành trang web, thông tin liên hệ</p>
-            <p>Phần article để hiện thị nội dung</p>
-        </article>
-    </section>
-    <footer id="footerflex">Thông tin liên hệ: xxxxxx.com.vn</footer>
 </body>
 
 
