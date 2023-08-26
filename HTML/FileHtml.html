@@ -21,30 +21,17 @@
 <body>
   <h2>Audio</h2>
   <p>Nguyễn Viết Hoàng Nam - 2021050461</p>
-  <p>Count numbers: <output id="result"></output></p>
-  <button onclick="startWorker()">Start Worker</button>
-  <button onclick="stopWorker()">Stop Worker</button>
-  <p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support Web Workers.</p>
-  
+  <h1>Getting server updates</h1>
+  <div id="result"></div>
+
   <script>
-    var w;
-
-    function startWorker() {
-      if (typeof (Worker) !== "undefined") {
-        if (typeof (w) == "undefined") {
-          w = new Worker("demo_workers.js");
-        }
-        w.onmessage = function (event) {
-          document.getElementById("result").innerHTML = event.data;
-        };
-      } else {
-        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
-      }
-    }
-
-    function stopWorker() {
-      w.terminate();
-      w = undefined;
+    if (typeof (EventSource) !== "undefined") {
+      var source = new EventSource("php\demo_sse.php");
+      source.onmessage = function (event) {
+        document.getElementById("result").innerHTML += event.data + "<br>";
+      };
+    } else {
+      document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
     }
   </script>
 </body>
