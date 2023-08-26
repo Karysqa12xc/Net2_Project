@@ -14,34 +14,38 @@
   </html>
   <link rel="icon" type="image/x-icon" href="imgs/Ông Tố Hữu.jpg">
   <style>
-
+    #div1 {
+      width: 350px;
+      height: 310px;
+      padding: 10px;
+      border: 1px solid #aaaaaa;
+    }
   </style>
+  <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+  </script>
 </head>
 
 <body>
   <h2>Audio</h2>
   <p>Nguyễn Viết Hoàng Nam - 2021050461</p>
-  <p>Click the button to get your coordinates.</p>
+  <p>Drag the W3Schools image into the rectangle:</p>
 
-  <button onclick="getLocation()">Try It</button>
-
-  <p id="demo"></p>
-  <script>
-    var x = document.getElementById("demo");
-    
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(showPosition);
-      } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-      }
-    }
-        
-    function showPosition(position) {
-        x.innerHTML="Latitude: " + position.coords.latitude + 
-        "<br>Longitude: " + position.coords.longitude;
-    }
-    </script>
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br>
+  <img id="drag1" src="imgs/requestIMG.png" draggable="true" ondragstart="drag(event)" width="360" height="300">
 </body>
 
 
