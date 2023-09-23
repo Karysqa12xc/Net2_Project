@@ -30,5 +30,13 @@ namespace NewApp.Models
           , Hoten, DiaChi, tuoi, soDienThoai);
             
         }
+        public void Display(string ten, int tuoi)
+        {
+            Console.WriteLine("Sinh vien {0} - {1} tuoi", ten, tuoi);
+        }
+        public void Display(string ten, string diaChi)
+        {
+            Console.WriteLine("Sinh vien {0} - {1}", ten, diaChi);    
+        }
     }
 }

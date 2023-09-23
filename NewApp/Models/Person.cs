@@ -11,12 +11,12 @@ namespace NewApp.Models
         public string Address { get; set; }
         public int Age { get; set; }
 
-        // public Person()
-        // {
-        //     FullName = "Nguyen Viet Hoang Nam";
-        //     Address = "Ha Noi";
-        //     Age = 22;
-        // }
+        public Person()
+        {
+            FullName = "Nguyen Viet Hoang Nam";
+            Address = "Ha Noi";
+            Age = 22;
+        }
         public void EnterData()
         {
             Console.WriteLine($"FullName: ");
@@ -31,8 +31,10 @@ namespace NewApp.Models
             Console.WriteLine($"FullName = {FullName}" +
             $" - Address = {Address}" + $" - Age = {Age}");
         }
-        // public void Display2(string ten, string tuoi){
-        //     Console.WriteLine($"{0} - {1}", ten, tuoi);
-        // }
+        public int GetYearOfBirth(int age)
+        {
+            int yearOfBirth = 2023 - age;
+            return yearOfBirth;
+        }
     }
 }
