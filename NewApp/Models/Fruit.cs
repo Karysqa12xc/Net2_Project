@@ -10,7 +10,11 @@ namespace NewApp.Models
     {
         public string nameFruit { get; set; }
         public double fresh { get; set; }
-
+        public Fruit()
+        {
+            nameFruit = "Drangon Fruit";
+            fresh = 50;
+        }
         public void EnterData(){
             Console.WriteLine($"nameFruit = ");
             nameFruit = Console.ReadLine();
@@ -21,6 +25,15 @@ namespace NewApp.Models
         public void Display()
         {
             Console.WriteLine("{0} - {1}", nameFruit, fresh);
+        }
+        public void Display(string nameFruit)
+        {
+            this.nameFruit = nameFruit;
+        }
+        
+        public double FreshOfFruit(double fresh)
+        {
+            return fresh;
         }
     }
 }

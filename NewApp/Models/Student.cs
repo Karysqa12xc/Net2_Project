@@ -10,7 +10,10 @@ namespace NewApp.Models
     {
         public string name { get; set; }
         public int classOfStudent { get; set; }
-
+        public Student()
+        {
+            
+        }
         public void EnterData()
         {
             Console.WriteLine($"name = ");
@@ -20,7 +23,15 @@ namespace NewApp.Models
         }
         public void Display()
         {
-            Console.WriteLine($"{0} - {1} - {2} - {3}", name, classOfStudent);
+            Console.WriteLine($"{0} - {1}", name, classOfStudent);
+        }
+        public void Display(string name, int classOfStudent)
+        {
+          Console.WriteLine($"{0} - {1}", name, classOfStudent);
+        }
+        public int ReturnClassNumber(int classNum)
+        {
+            return classNum;
         }
     }
 }

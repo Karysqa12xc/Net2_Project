@@ -1,10 +1,5 @@
-﻿using System.Runtime.CompilerServices;
-using NewApp.Models;
+﻿using NewApp.Models;
 
-// TODO: Khoi tao doi tuong
-Person ps1 = new Person();
-//* Khai bao 2 bien va gan gia tri
-string str = "Nguyen Van A";
-int a = 22;
-Console.WriteLine($"{str} sinh nam {ps1.GetYearOfBirth(a)}");
-
+GiaiPhuongTrinh pt = new GiaiPhuongTrinh();
+Console.WriteLine($"{pt.PhuongTrinhBac2(1, 5, 2)}");
+Console.WriteLine($"{pt.PhuongTrinhBac1(2,1)}");

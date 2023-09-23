@@ -11,6 +11,13 @@ namespace NewApp.Models
         public string tenNhanVien { set; get; }
         public int tuoi { set; get; }
         public double luong { get; set; }
+        public Employee(int maNhanVien, string tenNhanVien, int tuoi, double luong)
+        {
+            this.maNhanVien = maNhanVien;
+            this.tenNhanVien = tenNhanVien;
+            this.tuoi = tuoi;
+            this.luong = luong;
+        }
         public void NhapThongTin()
         {
             Console.WriteLine($"MaNhanVien = ");
@@ -26,6 +33,15 @@ namespace NewApp.Models
         {
             Console.WriteLine($"{0} - {1} - {2} - {3}", 
             maNhanVien, tenNhanVien, tuoi, luong);  
+        }
+        public void HienThi(int maNhanVien, string tenNhanVien, int tuoi, double luong)
+        {
+            Console.WriteLine($"{0} - {1} - {2} - {3}", 
+            maNhanVien, tenNhanVien, tuoi, luong); 
+        }
+        public int LayTuoi(int age)
+        {
+            return age;
         }
     }
 }
