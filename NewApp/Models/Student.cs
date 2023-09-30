@@ -12,12 +12,13 @@ namespace NewApp.Models
         public int classOfStudent { get; set; }
         public Student()
         {
-            
+            name = "";
+            classOfStudent = 0;
         }
         public void EnterData()
         {
             Console.WriteLine($"name = ");
-            name = Console.ReadLine();
+            name = Console.ReadLine() ?? "";
             Console.WriteLine($"classOfStudent = ");
             classOfStudent = Convert.ToInt16(Console.ReadLine());
         }

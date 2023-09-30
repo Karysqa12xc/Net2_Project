@@ -23,7 +23,7 @@ namespace NewApp.Models
             Console.WriteLine($"MaNhanVien = ");
             maNhanVien = Convert.ToInt16(Console.ReadLine());
             Console.WriteLine($"tenNhanVien = ");
-            tenNhanVien = Console.ReadLine();
+            tenNhanVien = Console.ReadLine() ?? "";
             Console.WriteLine($"tuoi = ");
             tuoi = Convert.ToInt16(Console.ReadLine());
             Console.WriteLine($"luong = ");

@@ -20,9 +20,9 @@ namespace NewApp.Models
         public void EnterData()
         {
             Console.WriteLine($"FullName: ");
-            FullName = Console.ReadLine();
+            FullName = Console.ReadLine() ?? "";
             Console.WriteLine($"Address: ");
-            Address = Console.ReadLine();
+            Address = Console.ReadLine() ?? "";
             Console.WriteLine($"Age: ");
             Age = Convert.ToInt16(Console.ReadLine());    
         }
@@ -30,6 +30,11 @@ namespace NewApp.Models
         {
             Console.WriteLine($"FullName = {FullName}" +
             $" - Address = {Address}" + $" - Age = {Age}");
+        }
+        public void ModifierInfoPerson(){
+            FullName = Console.ReadLine() ?? "";
+            Address = Console.ReadLine() ?? "";
+            Age = int.Parse(Console.ReadLine() ?? "1");
         }
         public int GetYearOfBirth(int age)
         {

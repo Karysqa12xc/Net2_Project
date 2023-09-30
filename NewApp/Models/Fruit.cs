@@ -12,12 +12,12 @@ namespace NewApp.Models
         public double fresh { get; set; }
         public Fruit()
         {
-            nameFruit = "Drangon Fruit";
+            nameFruit = "Dragon Fruit";
             fresh = 50;
         }
         public void EnterData(){
             Console.WriteLine($"nameFruit = ");
-            nameFruit = Console.ReadLine();
+            nameFruit = Console.ReadLine() ?? "";
             Console.WriteLine($"fresh = ");
             fresh = Convert.ToDouble(Console.ReadLine());
             

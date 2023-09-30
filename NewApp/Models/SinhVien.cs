@@ -7,17 +7,17 @@ namespace NewApp.Models
 {
     public class SinhVien
     {
-        public string Hoten { get; set; }
-        public string DiaChi { get; set; }
+        public string ?Hoten { get; set; }
+        public string ?DiaChi { get; set; }
         public int tuoi { get; set; }
         public int soDienThoai { set; get; }
 
         public void NhapThongTin()
         {
             Console.WriteLine($"HoTen = ");
-            Hoten = Console.ReadLine();
+            Hoten = Console.ReadLine() ?? "";
             Console.WriteLine($"DiaChi = ");
-            DiaChi = Console.ReadLine();
+            DiaChi = Console.ReadLine() ?? "";
             Console.WriteLine($"tuoi = ");
             tuoi = Convert.ToInt16(Console.ReadLine());
             Console.WriteLine($"soDienThoai = ");
