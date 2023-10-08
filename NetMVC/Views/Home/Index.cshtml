@@ -1,8 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["title"] = "Home Page";
 }
+<h1>Ket qua: @ViewBag.thongBao</h1>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<form class="w3-container" asp-action="Index">
+
+    <input class="w3-input" type="number" name="a">
+    <label>Tham số a</label>
+
+    <input class="w3-input" type="number" name="b">
+    <label>Tham Số b</label>
+
+    <input class="w3-input" type="number" name="c">
+    <label>Tham Số c</label>
+    <div>
+        <button class="w3-btn w3-blue" type="submit">Tính</button>
+    </div>
+</form>

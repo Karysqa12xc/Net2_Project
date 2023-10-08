@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NUXCVrE2EHzuVVd5yITH5Se+gXEZnS+ChoylPMqMoeQ=",
+  "Hash": "96NWt+kXBERJaekUWauq1KUlLscHMmoAKOYLitz3BJc=",
   "Source": "NetMVC",
   "BasePath": "_content/NetMVC",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "D:\\Workspace\\C#_All-Foder\\C#_ASP_NET\\ASPOnClass\\Demo\\NetMVC\\wwwroot\\css\\w3.css",
+      "SourceId": "NetMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Workspace\\C#_All-Foder\\C#_ASP_NET\\ASPOnClass\\Demo\\NetMVC\\wwwroot\\",
+      "BasePath": "_content/NetMVC",
+      "RelativePath": "css/w3.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\w3.css"
     },
     {
       "Identity": "D:\\Workspace\\C#_All-Foder\\C#_ASP_NET\\ASPOnClass\\Demo\\NetMVC\\wwwroot\\favicon.ico",

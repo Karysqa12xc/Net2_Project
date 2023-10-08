@@ -1,0 +1,26 @@
+@model IEnumerable<NetMVC.Models.Person>
+@* <h2>@ViewBag.KetQua</h2>
+<form asp-action="Index">
+    <input type="text" name="PersonID">
+    <input type="text" name="FullName">
+    <input type="text" name="Address">
+    <input type="submit" value="Send">
+</form> *@
+<table class="w3-table w3-table-all">
+    <thead>
+        <tr class="w3-blue">
+            <th>Person ID</th>
+            <th>Full Name</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model){
+            <tr>
+                <th>@item.PersonID</th>
+                <th>@item.FullName</th>
+                <th>@item.Address</th>
+            </tr>
+        }
+    </tbody>
+</table>
