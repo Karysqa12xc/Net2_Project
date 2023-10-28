@@ -6,35 +6,135 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NetMVC.Models;
-using System.Reflection.Metadata.Ecma335;
+using NetMVC.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Drawing;
+using System.Reflection;
+using Microsoft.Data.Sqlite;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Diagnostics;
 
 namespace NetMVC.Controllers
 {
     public class PersonController : Controller
     {
-        List<Person> psList = new List<Person>();
-        private List<Person> CreatePersonList(){
-            psList.Add(new Person{PersonID = "PS01", FullName = "Nguyen Van A", Address = "Ha Noi"});
-            psList.Add(new Person{PersonID = "PS02", FullName = "Nguyen Van B", Address = "Hai Phong"});
-            psList.Add(new Person{PersonID = "PS03", FullName = "Nguyen Van C", Address = "Binh Duong"});
-            psList.Add(new Person{PersonID = "PS04", FullName = "Nguyen Van D", Address = "Binh Dinh"});
-            psList.Add(new Person{PersonID = "PS05", FullName = "Nguyen Van E", Address = "Hue"});
-            psList.Add(new Person{PersonID = "PS06", FullName = "Nguyen Van F", Address = "Vinh"});
-            psList.Add(new Person{PersonID = "PS07", FullName = "Nguyen Van G", Address = "Thanh Hoa"});
-            psList.Add(new Person{PersonID = "PS08", FullName = "Nguyen Van H", Address = "Yen Bai"});
-            psList.Add(new Person{PersonID = "PS09", FullName = "Nguyen Van I", Address = "Nam Dinh"});
-            return psList;
+        private readonly ApplicationDbcontext _context;
+        public PersonController(ApplicationDbcontext context)
+        {
+            _context = context;
         }
-        
-        public IActionResult Index(){
-            CreatePersonList();
-            var PersonInfo = psList.ToList();
-            return View(PersonInfo);
+        public async Task<IActionResult> Index()
+        {
+            var model = await _context.Person.ToListAsync();
+            return View(model);
+        }
+        public IActionResult Create()
+        {
+            return View();
         }
         [HttpPost]
-        public IActionResult Index(Person p){
-            ViewBag.KetQua = p.PersonID  + " - " + p.FullName + " - " + p.Address;
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("PersonID, FullName, Address")] Person ps)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Add(ps);
+                    await _context.SaveChangesAsync();
+                }catch(DbUpdateException){
+                    if (PersonExists(ps.PersonID))
+                    {
+                        return RedirectToAction(nameof(Index));
+                    }
+                }catch(SqliteException){
+                    if (PersonExists(ps.PersonID))
+                    {
+                        return RedirectToAction(nameof(Index));
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(ps);
+           
+        }
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null || _context.Person == null)
+            {
+                return NotFound();
+            }
+            var person = await _context.Person.FindAsync(id);
+            if (person == null)
+            {
+                return NotFound();
+            }
+            return View(person);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, [Bind("PersonID, FullName, Address")] Person ps)
+        {
+            if (id != ps.PersonID)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(ps);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!PersonExists(ps.PersonID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(ps);
+        }
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (id == null || _context.Person == null)
+            {
+                return NotFound();
+            }
+
+            var person = await _context.Person.FirstOrDefaultAsync(m => m.PersonID == id);
+            if (person == null)
+            {
+                return NotFound();
+            }
             return View();
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            if (_context.Person == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Person' is null");
+            }
+            var person = await _context.Person.FindAsync(id);
+            if (person != null)
+            {
+                _context.Person.Remove(person);
+            }
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        private bool PersonExists(string id)
+        {
+            return (_context.Person?.Any(e => e.PersonID == id)).GetValueOrDefault();
         }
     }
 }
