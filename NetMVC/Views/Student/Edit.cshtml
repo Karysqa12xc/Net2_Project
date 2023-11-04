@@ -1,0 +1,98 @@
+@model NetMVC.Models.Student
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1>Edit</h1>
+<div class="w3-row">
+    <a asp-action="Index" class="w3-btn w3-border w3-right w3-red w3-hover">Back to list</a>
+</div>
+<hr>
+@* <div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StudentID">
+            <div class="form-group">
+                <label asp-for="Fullname" class="control-label"></label>
+                <input asp-for="Fullname" class="form-group">
+                <span asp-validation-for="Fullname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-group">
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-group">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-group">
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="birthDay" class="control-label"></label>
+                <input asp-for="birthDay" class="form-group">
+                <span asp-validation-for="birthDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="isActive" class="control-label"></label>
+                <input asp-for="isActive" class="form-group">
+                <span asp-validation-for="isActive" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div> *@
+<div class="w3-container w3-blue">
+  <h2>Input Form</h2>
+</div>
+<form class="w3-container w3-card-4" asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+     <input type="hidden" asp-for="StudentID">
+    <br>
+    <div>
+        <label asp-for="Fullname" class="w3-text-grey"></label>
+        <input asp-for="Fullname" class="w3-input w3-border">
+        <span asp-validation-for="Fullname" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Age" class="w3-text-grey"></label>
+        <input asp-for="Age" class="w3-input w3-border">
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Email" class="w3-text-grey"></label>
+        <input asp-for="Email" class="w3-input w3-border">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Address" class="w3-text-grey"></label>
+        <input asp-for="Address" class="w3-input w3-border">
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="birthDay" class="w3-text-grey"></label>
+        <input asp-for="birthDay" class="w3-input w3-border">
+        <span asp-validation-for="birthDay" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="w3-row w3-margin-bottom">
+        <div class="w3-half">
+            <input asp-for="isActive" class="w3-check" type="checkbox" checked="checked">
+            <label>Active</label>        
+        </div>
+    </div>
+    <p><button type="submit" class="w3-btn w3-padding w3-blue" style="width:120px">Sửa</button></p>
+</form>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

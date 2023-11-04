@@ -11,7 +11,15 @@ namespace NetMVC.Models
     public class Student
     {
         [Key]
-        public string StudentID { get; set; }
-        public string FullName { get; set; }
+        public required string StudentID { get; set; }
+        public required string Fullname { get; set; }
+        public required int Age { get; set; }
+        [DataType(DataType.EmailAddress)]
+        public required string Email { get; set; }
+        public required string Address { get; set; }
+        [DataType(DataType.DateTime)]
+        public required DateTime birthDay { get; set; }
+        
+        public required bool isActive { get; set; }
     }
 }
