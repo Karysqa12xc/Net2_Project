@@ -284,3 +284,8 @@ D:\Workspace\C#_All-Foder\C#_ASP_NET\ASPOnClass\Demo\NetMVC\bin\Debug\net7.0\Sys
 D:\Workspace\C#_All-Foder\C#_ASP_NET\ASPOnClass\Demo\NetMVC\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
 D:\Workspace\C#_All-Foder\C#_ASP_NET\ASPOnClass\Demo\NetMVC\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 D:\Workspace\C#_All-Foder\C#_ASP_NET\ASPOnClass\Demo\NetMVC\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
+D:\Workspace\C#_All-Foder\C#_ASP_NET\ASPOnClass\Demo\NetMVC\bin\Debug\net7.0\JetBrains.Annotations.dll
+D:\Workspace\C#_All-Foder\C#_ASP_NET\ASPOnClass\Demo\NetMVC\bin\Debug\net7.0\X.PagedList.dll
+D:\Workspace\C#_All-Foder\C#_ASP_NET\ASPOnClass\Demo\NetMVC\bin\Debug\net7.0\X.PagedList.Mvc.Core.dll
+D:\Workspace\C#_All-Foder\C#_ASP_NET\ASPOnClass\Demo\NetMVC\bin\Debug\net7.0\X.PagedList.Web.Common.dll
+D:\Workspace\C#_All-Foder\C#_ASP_NET\ASPOnClass\Demo\NetMVC\obj\Debug\net7.0\NetMVC.MvcApplicationPartsAssemblyInfo.cs

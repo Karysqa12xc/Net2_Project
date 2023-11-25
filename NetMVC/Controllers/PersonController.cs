@@ -4,6 +4,9 @@ using NetMVC.Data;
 using Microsoft.EntityFrameworkCore;
 using NetMVC.Models.Process;
 using Microsoft.Data.Sqlite;
+using X.PagedList;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Drawing.Printing;
 namespace NetMVC.Controllers
 {
     public class PersonController : Controller
@@ -14,9 +17,19 @@ namespace NetMVC.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page, int? PageSize)
         {
-            var model = await _context.Person.ToListAsync();
+            ViewBag.PageSize = new List<SelectListItem>(){
+                new SelectListItem(){Value = "3", Text = "3"},
+                new SelectListItem(){Value = "5", Text = "5"},
+                new SelectListItem(){Value = "10", Text = "10"},
+                new SelectListItem(){Value = "15", Text = "15"},
+                new SelectListItem(){Value = "25", Text = "25"},
+                new SelectListItem(){Value = "50", Text = "50"},
+            };
+            int pagesize = (PageSize ?? 3);
+            ViewBag.psize = pagesize;
+            var model = _context.Person.ToList().ToPagedList(page ?? 1, pagesize);
             return View(model);
         }
         public IActionResult Create()
@@ -33,12 +46,16 @@ namespace NetMVC.Controllers
                 {
                     _context.Add(ps);
                     await _context.SaveChangesAsync();
-                }catch(DbUpdateException){
+                }
+                catch (DbUpdateException)
+                {
                     if (PersonExists(ps.PersonID))
                     {
                         return RedirectToAction(nameof(Index));
                     }
-                }catch(SqliteException){
+                }
+                catch (SqliteException)
+                {
                     if (PersonExists(ps.PersonID))
                     {
                         return RedirectToAction(nameof(Index));
@@ -47,7 +64,7 @@ namespace NetMVC.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(ps);
-           
+
         }
         public async Task<IActionResult> Edit(string id)
         {
@@ -134,15 +151,20 @@ namespace NetMVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Upload(IFormFile file)
         {
-            if(file != null){
+            if (file != null)
+            {
                 string fileExtension = Path.GetExtension(file.FileName);
-                if(fileExtension != ".xls" && fileExtension != ".xlsx"){
+                if (fileExtension != ".xls" && fileExtension != ".xlsx")
+                {
                     ModelState.AddModelError("", "Please choose file excel");
-                }else{
+                }
+                else
+                {
                     var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
                     var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels", fileName);
                     var fileLocation = new FileInfo(filePath).ToString();
-                    using(var stream = new FileStream(filePath, FileMode.Create)){
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
                         await file.CopyToAsync(stream);
                         var dt = _excelProcess.ExcelToDataTable(fileLocation);
                         for (var i = 0; i < dt.Rows.Count; i++)
